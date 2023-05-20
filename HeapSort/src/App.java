@@ -14,8 +14,9 @@ public class App {
 		int n = arr.length;
         
 		// Membangun heap (menyusun ulang array)
-		for (int i = n / 2 - 1; i >= 0; i--)
+		for (int i = n / 2 - 1; i >= 0; i--) {
 			heapShort(arr, n, i);
+        }
 
 		// Satu per satu ekstrak elemen dari heap
 		for (int i = n - 1; i >= 0; i--) {
@@ -37,12 +38,14 @@ public class App {
 		int r = 2 * i + 2; // kanan = 2*i + 2
 
 		// Jika leftc child lebih besar dari root
-		if (l < n && arr[l] > arr[largest])
+		if (l < n && arr[l] > arr[largest]) {
 			largest = l;
+        }
 
 		// Jika right child lebih besar dari yang terbesar sejauh ini
-		if (r < n && arr[r] > arr[largest])
+		if (r < n && arr[r] > arr[largest]) {
 			largest = r;
+        }
 
 		// Jika terbesar bukan root
 		if (largest != i) {
@@ -57,8 +60,9 @@ public class App {
 	// Fungsi untuk mencetak array
 	static void printArray(int arr[]) {
 		int n = arr.length;
-		for (int i = 0; i < n; ++i)
+		for (int i = 0; i < n; ++i) {
 			System.out.print(arr[i] + " ");
+        }
 		System.out.println();
 	}
 }
