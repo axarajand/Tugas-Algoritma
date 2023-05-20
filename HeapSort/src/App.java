@@ -1,6 +1,6 @@
 public class App {
 	public static void main(String args[]) {
-		int arr[] = {20, 30, 10, 15, 5};
+		int arr[] = {20, 15, 30, 5, 10};
 
 		System.out.print("Sebelum Diurutkan : ");
 		printArray(arr);
@@ -30,19 +30,17 @@ public class App {
 		}
 	}
 
-	// Untuk menimbun subtree yang di-root dengan simpul i yang mana
-    // indeks dalam arr[]. n adalah ukuran tumpukan
 	static void heapShort(int arr[], int n, int i) {
 		int largest = i; // Inisialisasi terbesar sebagai root
-		int l = 2 * i + 1; // kiri = 2*i + 1
-		int r = 2 * i + 2; // kanan = 2*i + 2
+		int l = i; // kiri = i
+		int r = i + 1; // kanan = i + 1
 
 		// Jika leftc child lebih besar dari root
 		if (l < n && arr[l] > arr[largest]) {
 			largest = l;
         }
 
-		// Jika right child lebih besar dari yang terbesar sejauh ini
+		// Jika right child lebih besar dari root
 		if (r < n && arr[r] > arr[largest]) {
 			largest = r;
         }
@@ -55,6 +53,7 @@ public class App {
 
 			heapShort(arr, n, largest);
 		}
+
 	}
 
 	// Fungsi untuk mencetak array
